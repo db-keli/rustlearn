@@ -54,8 +54,50 @@ fn main() {
     
     //Functions
     another_function(5);
+
+    let add_result = add_numbers(6, 4);
+    println!("The result of the addition is: {}", add_result);
+
+    // Ownership
+    {
+        let x =5;
+        let y = x; // x Copied into y 
+
+        println!("{}", y);
+
+        let s1 = String::from("Hello");
+        let s2 = s1.clone(); // s1 moved onto s2
+
+        println!("s1: {}", s1);
+        println!("s2: {}", s2);
+
+
+        let s = String::from("Hello");
+        let d = 5;
+
+        takes_ownership(s); // Ownership of s moves into the function
+                                        // so s is no longer valid and calling it will throw 
+                                        // an error
+        
+        makes_copy(d); // Copies d into some_integer so d is still valid and 
+                                    // and can be called after
+    }
+
 }
 
 fn another_function(x:i32){
     println!("The value you typed + 5 is {}", x+5);
 }
+
+fn add_numbers(x: i32, y: i32 ) -> i32 {
+    return x + y;
+}
+
+fn takes_ownership (some_string: String) {
+    println!("{}", some_string);
+}
+
+fn makes_copy (some_integer: i32 ) {
+    println!("{}", some_integer);
+}
+
