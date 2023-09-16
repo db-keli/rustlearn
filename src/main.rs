@@ -1,7 +1,7 @@
 const NUM: u32 = 100_000;
 
 fn main() {
-    // Undersctanding Immutability
+    // Understanding Immutability
     {
         let mut x = 5;
         println!("The value of x is: {}", x);
