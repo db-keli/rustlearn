@@ -53,11 +53,12 @@ fn main() {
     }
     
     //Functions
-    another_function(5);
+    {
+        another_function(5);
 
-    let add_result = add_numbers(6, 4);
-    println!("The result of the addition is: {}", add_result);
-
+        let add_result = add_numbers(6, 4);
+        println!("The result of the addition is: {}", add_result);
+    }
     // Ownership
     {
         let x =5;
@@ -83,6 +84,19 @@ fn main() {
                                     // and can be called after
     }
 
+    {
+        println!("Let's Learn some more");
+
+        let s1 = gives_ownership();
+        let s2 = String::from("hello");
+        let s3 = takes_and_gives_back(s2);
+
+        let (s, length) = calculate_length(s3.clone());
+
+        println!("the length of '{}' is {}.", s3, length);
+
+    }
+
 }
 
 fn another_function(x:i32){
@@ -99,4 +113,20 @@ fn takes_ownership (some_string: String) {
 
 fn makes_copy (some_integer: i32 ) {
     println!("{}", some_integer);
+}
+
+fn gives_ownership() -> String {
+    let some_string = String::from("Hello");
+
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String{
+    a_string
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
+
+    (s, length)
 }
