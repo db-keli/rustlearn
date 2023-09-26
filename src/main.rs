@@ -107,21 +107,12 @@ fn main() {
 
     // Struct To Structure Related Data
     {
-        struct User {
-            username: String,
-            email: String,
-            sign_in_count: u64,
-            active: bool,
-        }
-
-        let user1 = User {
-            email: String::from("kekelidompeh@gmail.com"),
-            username: String::from("kekeli"),
-            active: true,
-            sign_in_count: 4,
-        };
+        let user1 = build_user(String::from("kekelidompeh@gmail.com"), String::from("Mike"));
 
         println!("{}", user1.email);
+        println!("{}", user1.username);
+        println!("{}", user1.active);
+        println!("{}", user1.sign_in_count);
     }
 }
 
@@ -172,4 +163,19 @@ fn first_word(s: &String) -> &str {
         }
     }
     &s[..]
+}
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+// Build User Function
+fn build_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        active: true,
+        sign_in_count:1,
+    }
 }
