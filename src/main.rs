@@ -87,16 +87,42 @@ fn main() {
     {
         println!("Let's Learn some more");
 
-        let s1 = gives_ownership();
+        // let s1 = gives_ownership();
         let s2 = String::from("hello");
         let s3 = takes_and_gives_back(s2);
 
-        let (s, length) = calculate_length(s3.clone());
+        let (_s, length) = calculate_length(s3.clone());
 
         println!("the length of '{}' is {}.", s3, length);
 
     }
 
+    {   println!("Learn more about slicing");
+        let s = String::from("Hello World");
+        let word = first_word(&s);
+
+        println!("The first word i: {}", word);
+
+    }
+
+    // Struct To Structure Related Data
+    {
+        struct User {
+            username: String,
+            email: String,
+            sign_in_count: u64,
+            active: bool,
+        }
+
+        let user1 = User {
+            email: String::from("kekelidompeh@gmail.com"),
+            username: String::from("kekeli"),
+            active: true,
+            sign_in_count: 4,
+        };
+
+        println!("{}", user1.email);
+    }
 }
 
 fn another_function(x:i32){
@@ -115,11 +141,11 @@ fn makes_copy (some_integer: i32 ) {
     println!("{}", some_integer);
 }
 
-fn gives_ownership() -> String {
-    let some_string = String::from("Hello");
-
-    some_string
-}
+// fn gives_ownership() -> String {
+//     let some_string = String::from("Hello");
+//
+//     some_string
+// }
 
 fn takes_and_gives_back(a_string: String) -> String{
     a_string
@@ -127,6 +153,23 @@ fn takes_and_gives_back(a_string: String) -> String{
 
 fn calculate_length(s: String) -> (String, usize) {
     let length = s.len();
-
     (s, length)
+}
+
+// Dangling References
+
+// fn dangle() -> String {
+//     let s = String::from("hello");
+//     s
+// }
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate(){
+        if item == b' '{
+            return &s[..i];
+        }
+    }
+    &s[..]
 }
