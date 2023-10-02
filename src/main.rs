@@ -37,6 +37,7 @@ fn main() {
     };
 
     println!("{}", person.child);
+    println!("{:?}", person.child);
 }
 
 
