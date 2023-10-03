@@ -40,10 +40,3 @@ fn main() {
     println!("{:?}", person.child);
 }
 
-
-
-
-
-
-
-
