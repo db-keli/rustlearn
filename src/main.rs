@@ -1,42 +1,29 @@
-#[derive(Debug)]
-enum Avatar {
-    Fire,
-    Air,
-    Water,
-    Earth,
-}
-
-#[derive(Debug)]
-struct Cast {
-    name: String,
-    nation: Avatar,
-}
-
-#[derive(Debug)]
-struct Home {
-    mom: String,
-    dad: String,
-    child: String,
-}
-
 
 fn main() {
-    //ENUMERATIONS
+    //VECTORS
+    let v: Vec<i32> = Vec::new();
+    let mut a = [1, 2, 4];
+    let mut v = vec![1, 2, 4];
 
-    let person2 = Cast{
-        name: String::from("Aang"),
-        nation: Avatar::Air
-    };
-    println!("{:?}", person2);
-    println!("{:?}", person2.nation);
+    v.push(5);
+    v.push(6);
 
-    let person = Home{
-        mom: String::from("Daavi"),
-        dad: String::from("Sampson"),
-        child: String::from("James")
-    };
+    let third: &i32 = &v[2];
+    println!("The third element is {}", third);
 
-    println!("{}", person.child);
-    println!("{:?}", person.child);
+    let fourth: &i32 = &v[3];
+    println!("The fourth element is {}", fourth);
+
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There's not third element. "),
+    }
+
+    for i in &mut v {
+        *i += 50;
+    }
+    for i in &v {
+        println!("{}", i);
+    }
 }
 
