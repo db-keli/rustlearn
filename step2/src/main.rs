@@ -23,6 +23,8 @@ fn main() {
 
     new_age = helpers::privatefns::age_plus_5(6);
     println!("After five years he's, {0}", new_age);
+
+    helpers::statements::test_if();
 }
 
 
