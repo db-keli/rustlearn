@@ -1,2 +1,5 @@
-/target
+/step1/target
+/step2/target
+*.lock
+*.toml
 *.idea
