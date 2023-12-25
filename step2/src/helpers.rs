@@ -34,4 +34,21 @@ pub mod statements {
             println!("Not allowed to be a driver");
         }
     }
+
+    pub fn test_while(){
+        let age_to_drive = 16u8;
+
+        let mut current_age = 0u8;
+
+        while current_age < age_to_drive {
+            println!("Waiting ...");
+            current_age += 1;
+        }
+    }
+
+    pub fn test_loop(){
+        loop{
+            println!("Hello from rust! ")
+        }
+    }
 }
