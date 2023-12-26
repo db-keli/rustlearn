@@ -2,11 +2,12 @@ pub mod funcs;
 use std::io;
 
 fn main() {
-    println!("Welcome To Animal Guess Game! ");
-
     let answer = "Dog";
-
     let mut guess = String::new();
+
+    println!("Welcome To Animal Guess Game! ");
+    println!("Guess the animal?");
+
     io::stdin().read_line(&mut guess)
         .expect("Failed to read line");
 
