@@ -2,14 +2,18 @@ pub mod funcs;
 use std::io;
 
 fn main() {
-    let answer = "Dog";
-    let mut guess = String::new();
-
     println!("Welcome To Animal Guess Game! ");
-    println!("Guess the animal?");
 
-    io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
+    loop{
+        let animal = funcs::gen();
+        let mut guess = String::new();
 
-    funcs::check(guess, answer);
+        println!("Guess the animal?");
+
+        io::stdin().read_line(&mut guess)
+            .expect("Failed to read line");
+        let guess = guess.trim();
+
+        funcs::check(guess, animal);
+    }
 }
