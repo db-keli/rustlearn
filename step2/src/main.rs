@@ -61,6 +61,10 @@ fn main() {
     let strresult = optiontest::test_option_string();
 
     println!("{0}", strresult.unwrap());
+
+    let charresult = optiontest::test_option_chartype();
+
+    println!("{}", charresult.unwrap().to_string());
 }
 
 
