@@ -1,5 +1,8 @@
 pub mod helpers;
 pub mod closures;
+pub mod optiontest;
+
+
 
 fn main() {
     // println!("Guess the number");
@@ -41,7 +44,6 @@ fn main() {
     let four = IpAddrKind::V4;
     let six = IpAddrKind::V6;
 
-    #[warn(dead_code)]
     struct IpAddr {
         kind: IpAddrKind,
         address: String,
@@ -52,6 +54,9 @@ fn main() {
         address: String::from("127.0.0.1"),
     };
 
+   let result =  optiontest::test_option_type();
+
+    println!("{0}", result.unwrap());
 }
 
 
