@@ -1,4 +1,6 @@
 pub mod helpers;
+pub mod closures;
+
 fn main() {
     // println!("Guess the number");
     // println!("Please input your guess.");
@@ -15,20 +17,42 @@ fn main() {
     //     Ordering::Less => println!("Too small"),
     // }
     // println!("You guessed: {} and real number is {}", guess, secret)
-    let name;
-    let new_age;
-
-    name = helpers::namehelpers::get_full_name("Mike", "Alonso");
-    println!("Hello from {}", name);
-
-    new_age = helpers::privatefns::age_plus_5(6);
-    println!("After five years he's, {0}", new_age);
-
+    // let name;
+    // let new_age;
+    //
+    // name = helpers::namehelpers::get_full_name("Mike", "Alonso");
+    // println!("Hello from {}", name);
+    //
+    // new_age = helpers::privatefns::age_plus_5(6);
+    // println!("After five years he's, {0}", new_age);
+    //
     // helpers::statements::test_if();
     // helpers::statements::test_while();
-    helpers::statements::test_loop();
-}
+    //helpers::statements::test_loop();
+    // helpers::statements::test_for();
+    //
+    // closures::test_closures();
 
+    enum IpAddrKind {
+        V4,
+        V6,
+    }
+
+    let four = IpAddrKind::V4;
+    let six = IpAddrKind::V6;
+
+    #[warn(dead_code)]
+    struct IpAddr {
+        kind: IpAddrKind,
+        address: String,
+    }
+
+    let home = IpAddr {
+        kind: four,
+        address: String::from("127.0.0.1"),
+    };
+
+}
 
 
 
