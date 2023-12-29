@@ -4,3 +4,11 @@ pub fn test_option_type() -> Option<u8>
     opt1 = Some(10);
     return opt1;
 }
+
+pub fn test_option_string() -> Option<String>
+{
+    let mut opt2: Option<String> = None;
+    opt2 = Some(String::from("Trevor Sullivan"));
+
+    return opt2;
+}
