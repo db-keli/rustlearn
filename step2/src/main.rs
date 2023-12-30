@@ -1,7 +1,7 @@
 pub mod helpers;
 pub mod closures;
 pub mod optiontest;
-
+pub mod estrimple;
 
 
 fn main() {
@@ -36,36 +36,40 @@ fn main() {
     //
     // closures::test_closures();
 
-    enum IpAddrKind {
-        V4,
-        V6,
-    }
+   //  enum IpAddrKind {
+   //      V4,
+   //      V6,
+   //  }
+   //
+   //  let four = IpAddrKind::V4;
+   //  let six = IpAddrKind::V6;
+   //
+   //  struct IpAddr {
+   //      kind: IpAddrKind,
+   //      address: String,
+   //  }
+   //
+   //  let home = IpAddr {
+   //      kind: four,
+   //      address: String::from("127.0.0.1"),
+   //  };
+   //
+   // let result =  optiontest::test_option_type();
+   //
+   //  println!("{0}", result.unwrap());
+   //
+   //  let strresult = optiontest::test_option_string();
+   //
+   //  println!("{0}", strresult.unwrap());
+   //
+   //  let charresult = optiontest::test_option_chartype();
+   //
+   //  println!("{}", charresult.unwrap().to_string());
+    estrimple::create_vehicle();
 
-    let four = IpAddrKind::V4;
-    let six = IpAddrKind::V6;
-
-    struct IpAddr {
-        kind: IpAddrKind,
-        address: String,
-    }
-
-    let home = IpAddr {
-        kind: four,
-        address: String::from("127.0.0.1"),
-    };
-
-   let result =  optiontest::test_option_type();
-
-    println!("{0}", result.unwrap());
-
-    let strresult = optiontest::test_option_string();
-
-    println!("{0}", strresult.unwrap());
-
-    let charresult = optiontest::test_option_chartype();
-
-    println!("{}", charresult.unwrap().to_string());
 }
+
+
 
 
 
